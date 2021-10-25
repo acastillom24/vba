@@ -1,11 +1,15 @@
-https://www.rttsweb.com/training/courses/selenium-training  
-https://www.linkedin.com/pulse/excel-vbaselenium-fabio-aquino  
-https://stackoverflow.com/questions/57216623/using-google-chrome-in-selenium-vba-installation-steps  
-https://www.toolsqa.com/selenium-webdriver/excel-in-selenium/  
-https://www.browserstack.com/guide/read-data-from-excel-using-selenium  
-https://excelcute.com/vba-data-scraping-selenium/  
-https://florentbr.github.io/SeleniumBasic/  
-https://www.youtube.com/watch?v=_IlkdRwgIwg  
+Dowloaded  
+Selenium Basic: https://github.com/florentbr/SeleniumBasic/releases  
+ChromeDriver - WebDriver for Chrome: https://sites.google.com/chromium.org/driver/  
+Install the .NET Framework 3.5: https://docs.microsoft.com/en-us/dotnet/framework/install/dotnet-35-windows  
+
+info from:  
+https://excelcute.com/vba-data-scraping-selenium/
+
+WiseOwlTutorials (Youtube)  
+[Excel VBA Introduction Part 57.1 - Getting Started with Selenium Basic and Google Chrome](https://www.youtube.com/watch?v=FoxWcvZzYVk)
+
+
 https://www.youtube.com/watch?v=mMQYJaaawEg  
 https://www.youtube.com/watch?v=lr7CFZEI2YA  
 https://www.youtube.com/watch?v=FoxWcvZzYVk  
