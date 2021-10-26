@@ -7,7 +7,8 @@ info from:
 https://excelcute.com/vba-data-scraping-selenium/
 
 WiseOwlTutorials (Youtube)  
-[Excel VBA Introduction Part 57.1 - Getting Started with Selenium Basic and Google Chrome](https://www.youtube.com/watch?v=FoxWcvZzYVk)
+[Excel VBA Introduction Part 57.1 - Getting Started with Selenium Basic and Google Chrome](https://www.youtube.com/watch?v=FoxWcvZzYVk)  
+[Excel VBA Introduction Part 57.2 - Basic Web Scraping with Selenium and Google Chrome](https://www.youtube.com/watch?v=y7yWL0oCB3k)
 
 
 https://www.youtube.com/watch?v=mMQYJaaawEg  
