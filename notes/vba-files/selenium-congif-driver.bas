@@ -1,7 +1,7 @@
 
 Private Function configDriver(url As String) As ChromeDriver
 
-    ''Configuración del driver con la dirección web de partida
+    'Configuración del driver con la dirección web de partida
     '
     'Args:
     '   url (String): dirección web para establecer el punto de partida del driver
@@ -28,13 +28,14 @@ End Function
 
 Private Function configDriver(url As String, path As String) As ChromeDriver
 
-    'Configuración del driver con la dirección web de partida y la dirección del directorio local
+    'Configuración del driver
     '
     'Args:
-    '   url (String): dirección web para establecer el punto de partida del driver
+    '   url (String): path de partida en la web
+    '   path (String): path de la carpeta contenedora de las descargas
     '
     'Returns:
-    '    ChromeDriver: objeto chrome driver con las configuraciones
+    '    ChromeDriver: objeto con las configuraciones de la web de inicio y la carpeta de descargas
     '
 
     Dim driver As Selenium.ChromeDriver
