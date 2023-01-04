@@ -34,7 +34,7 @@ Proyectos realizados con el lenguaje vba, el cual viene integrado en la aplicaci
 - [Scroll down a web page in Chrome with Selenium for VBA](https://www.youtube.com/watch?v=s3Bxb0wthqI)
 
 ## Proyectos
-- **VMCSubastas**: Sirve para scrapear el historico de las subastase en la plataforma [vmcsubastas](4panel.vmcsubastas.com).
+- **Ripley Puntos** 👇[ripley-puntos.xlsm](https://github.com/acastillom24/vba/raw/main/web-scraping/ripley-puntos.xlsm): Sirve obtener la información de los productos que puedes obtener con tus puntos ripley.
 
 ## Recursos
 - [wiseowl.co.uk](https://www.wiseowl.co.uk/)
