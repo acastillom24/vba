@@ -1,14 +1,29 @@
 # Visual Basic for Applications
+
 Proyectos realizados con el lenguaje vba, el cual viene integrado en la aplicaciones de office.
 
+## General
+
+- Crea un libro de trabajo habilitado para macros
+
+```batch
+start excel /m
+```
+
+[🖱Más comandos](https://support.microsoft.com/en-us/office/command-line-switches-for-microsoft-office-products-079164cd-4ef5-4178-b235-441737deb3a6#Category=Excel)
+
 ## Selenium
+
 ### Instalación
+
 - [Selenium Basic](https://github.com/florentbr/SeleniumBasic/releases)  
 - [ChromeDriver](https://sites.google.com/chromium.org/driver/)
 - [Install the .NET Framework 3.5](https://docs.microsoft.com/en-us/dotnet/framework/install/dotnet-35-windows)  
 
 ### Información
+
 🌍
+
 - [Introducción a Selenium Testing](https://qalified.com/introduccion-a-selenium-testing/)
 - [Chromium Code Search](https://source.chromium.org/)
 - [List of Chromium Command Line Switches](https://peter.sh/experiments/chromium-command-line-switches/)
@@ -23,6 +38,7 @@ Proyectos realizados con el lenguaje vba, el cual viene integrado en la aplicaci
 - [Window.scrollTo()](https://developer.mozilla.org/es/docs/Web/API/Window/scrollTo)
 
 🎬
+
 - [Excel VBA Introduction Part 57.1 - Getting Started with Selenium Basic and Google Chrome](https://www.youtube.com/watch?v=FoxWcvZzYVk)  
 - [Excel VBA Introduction Part 57.2 - Basic Web Scraping with Selenium and Google Chrome](https://www.youtube.com/watch?v=y7yWL0oCB3k)
 - [Excel VBA Introduction Part 57.3 - Using Different Web Browsers with Selenium](https://www.youtube.com/watch?v=qxNx12RWihU)
@@ -34,9 +50,11 @@ Proyectos realizados con el lenguaje vba, el cual viene integrado en la aplicaci
 - [Scroll down a web page in Chrome with Selenium for VBA](https://www.youtube.com/watch?v=s3Bxb0wthqI)
 
 ## Proyectos
-- **Ripley Puntos** 👇[ripley-puntos.xlsm](https://github.com/acastillom24/vba/raw/main/web-scraping/ripley-puntos.xlsm): Sirve obtener la información de los productos que puedes obtener con tus puntos ripley.
+
+- [👇Ripley Puntos](https://github.com/acastillom24/vba/raw/main/web-scraping/ripley-puntos.xlsm): Sirve obtener la información de los productos que puedes obtener con tus puntos ripley.
 
 ## Recursos
+
 - [wiseowl.co.uk](https://www.wiseowl.co.uk/)
 - [excelcute.com](https://excelcute.com/)
 - [guru99.com](https://www.guru99.com/)

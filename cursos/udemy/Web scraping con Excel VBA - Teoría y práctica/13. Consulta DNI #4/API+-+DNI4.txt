@@ -1,0 +1,3 @@
+Web: https://sistemasexcel.com/curso/dni/consulta3.php
+Tipo: POST
+Solicitud: dni=12345678

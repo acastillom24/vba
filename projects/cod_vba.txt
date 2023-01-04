@@ -1,0 +1,25 @@
+Option Explicit
+
+Sub lista_productos_vendidos_mes()
+    
+    Dim lr As Long, i As Long, k As Long, mes As String
+    
+    lr = Hoja1.Range("C" & Rows.Count).End(xlUp).Row
+    mes = Hoja3.Range("B5").Value
+    mes = LCase(mes)
+    k = 9
+    
+    For i = 6 To lr
+        mes_comparacion = Hoja1.Range("C" & i).Value
+        If (mes = mes_comparacion) Then
+            Hoja3.Range("A" & k) = Hoja3.Range("B" & i).Value 'Copiamos la factura
+            Hoja3.Range("B" & k) = Hoja3.Range("D" & i).Value 'Copiamos el vendedor
+            Hoja3.Range("C" & k) = Hoja3.Range("E" & i).Value 'Copiamos el distrito
+            Hoja3.Range("D" & k) = Hoja3.Range("F" & i).Value 'Copiamos el tipo
+            Hoja3.Range("E" & k) = Hoja3.Range("G" & i).Value 'Copiamos las utilidades
+            Hoja3.Range("F" & k) = Hoja3.Range("H" & i).Value 'Copiamos las ventas
+            k = k + 1
+        End If
+    Next i
+    
+End Sub
