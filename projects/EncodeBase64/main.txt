@@ -11,5 +11,7 @@ Function EncodeBase64(text As String) As String
   objNode.DataType = "bin.base64"
   objNode.nodeTypedValue = arrData
   EncodeBase64 = Replace(objNode.text, vbLf, "")
+
+  Set objNode = Nothing
   Set objXML = Nothing
 End Function
