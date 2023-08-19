@@ -1,0 +1,17 @@
+Function EncodeBase64(text As String) As String
+  Dim arrData() As Byte
+  arrData = StrConv(text, vbFromUnicode)
+
+  Dim objXML As Variant
+  Dim objNode As Variant
+
+  Set objXML = CreateObject("MSXML2.DOMDocument")
+  Set objNode = objXML.createElement("b64")
+
+  objNode.DataType = "bin.base64"
+  objNode.nodeTypedValue = arrData
+  EncodeBase64 = Replace(objNode.text, vbLf, "")
+
+  Set objNode = Nothing
+  Set objXML = Nothing
+End Function
