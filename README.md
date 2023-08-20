@@ -49,12 +49,16 @@ start excel /m
 - [Excel VBA Introduction Part 57.8 - Printing in Google Chrome using Selenium](https://www.youtube.com/watch?v=jEYvgU46gmE)
 - [Scroll down a web page in Chrome with Selenium for VBA](https://www.youtube.com/watch?v=s3Bxb0wthqI)
 
+<<<<<<< HEAD
+## Ribbon
+=======
 ## Ribbon y Backstage
 
 ### Información
 
 🌍
 
+>>>>>>> 453ac0aa989737980105df4ffbfeff03ce2b81c1
 - [Cómo programar Excel Ribbon y Backstage con XML y VBA](https://www.youtube.com/watch?v=vKH13g4Xmb4)
 
 ## Proyectos
