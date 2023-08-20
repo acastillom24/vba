@@ -65,4 +65,4 @@ Download-ChromeDriver incluye opciones para evitar errores inesperados:
 
 ## Recursos
 
-Puedes descargar un archivo [selenium.xlsm](), el cual ya contiene todas las configuraciones.
+Puedes descargar un archivo [selenium.xlsm](https://github.com/acastillom24/vba/raw/develop/projects/selenium.xlsm?download=), el cual ya contiene todas las configuraciones.
