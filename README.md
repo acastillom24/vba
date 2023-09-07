@@ -2,15 +2,11 @@
 
 Proyectos realizados con el lenguaje vba, el cual viene integrado en la aplicaciones de office.
 
-## General
+## Recursos
 
-- Crea un libro de trabajo habilitado para macros
-
-```batch
-start excel /m
-```
-
-[🖱Más comandos](https://support.microsoft.com/en-us/office/command-line-switches-for-microsoft-office-products-079164cd-4ef5-4178-b235-441737deb3a6#Category=Excel)
+- [wiseowl.co.uk](https://www.wiseowl.co.uk/)
+- [excelcute.com](https://excelcute.com/)
+- [guru99.com](https://www.guru99.com/)
 
 ## Selenium
 
@@ -49,24 +45,63 @@ start excel /m
 - [Excel VBA Introduction Part 57.8 - Printing in Google Chrome using Selenium](https://www.youtube.com/watch?v=jEYvgU46gmE)
 - [Scroll down a web page in Chrome with Selenium for VBA](https://www.youtube.com/watch?v=s3Bxb0wthqI)
 
-<<<<<<< HEAD
 ## Ribbon
-=======
+
 ## Ribbon y Backstage
 
 ### Información
-
-🌍
-
->>>>>>> 453ac0aa989737980105df4ffbfeff03ce2b81c1
+🎬
 - [Cómo programar Excel Ribbon y Backstage con XML y VBA](https://www.youtube.com/watch?v=vKH13g4Xmb4)
 
 ## Proyectos
 
 - [👇Ripley Puntos](https://github.com/acastillom24/vba/raw/main/web-scraping/ripley-puntos.xlsm): Sirve obtener la información de los productos que puedes obtener con tus puntos ripley.
 
-## Recursos
+## Otros
 
-- [wiseowl.co.uk](https://www.wiseowl.co.uk/)
-- [excelcute.com](https://excelcute.com/)
-- [guru99.com](https://www.guru99.com/)
+### Guardar texto
+
+```vb
+Private Function saveString(textToSave$)
+    Dim filePath As String
+    Dim fileNumber As Integer
+
+    filePath = "[RUTA_DEL_ARCHIVO]"
+    fileNumber = FreeFile
+    Open filePath For Output As #fileNumber
+    Print #fileNumber, textToSave
+    Close #fileNumber
+    
+    MsgBox "Archivo guardado correctamente."
+End Function
+```
+
+### Generar un Status Bar
+
+```vb
+Private Function BarraDeProgreso()
+    Dim i As Long
+    Dim max As Long
+    
+    max = 100
+    
+    For i = 1 To max
+        Application.StatusBar = "Progreso: [" & _
+        String(i, ChrW(9608)) & String(max - i, " ") & "] " & _
+        Format(i / max, "0%")
+        Application.Wait Now + TimeValue("0:00:01")
+    Next i
+    
+    Application.StatusBar = False
+End Function
+```
+
+## Ejecuciones por consola
+
+- Crea un libro de trabajo habilitado para macros
+
+```batch
+start excel /m
+```
+
+[🖱Más comandos](https://support.microsoft.com/en-us/office/command-line-switches-for-microsoft-office-products-079164cd-4ef5-4178-b235-441737deb3a6#Category=Excel)
