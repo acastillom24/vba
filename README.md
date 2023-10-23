@@ -12,9 +12,9 @@ Proyectos realizados con el lenguaje vba, el cual viene integrado en la aplicaci
 
 ### Instalación
 
-- [Selenium Basic](https://github.com/florentbr/SeleniumBasic/releases)  
+- [Selenium Basic](https://github.com/florentbr/SeleniumBasic/releases)
 - [ChromeDriver](https://sites.google.com/chromium.org/driver/)
-- [Install the .NET Framework 3.5](https://docs.microsoft.com/en-us/dotnet/framework/install/dotnet-35-windows)  
+- [Install the .NET Framework 3.5](https://docs.microsoft.com/en-us/dotnet/framework/install/dotnet-35-windows)
 
 ### Información
 
@@ -35,7 +35,7 @@ Proyectos realizados con el lenguaje vba, el cual viene integrado en la aplicaci
 
 🎬
 
-- [Excel VBA Introduction Part 57.1 - Getting Started with Selenium Basic and Google Chrome](https://www.youtube.com/watch?v=FoxWcvZzYVk)  
+- [Excel VBA Introduction Part 57.1 - Getting Started with Selenium Basic and Google Chrome](https://www.youtube.com/watch?v=FoxWcvZzYVk)
 - [Excel VBA Introduction Part 57.2 - Basic Web Scraping with Selenium and Google Chrome](https://www.youtube.com/watch?v=y7yWL0oCB3k)
 - [Excel VBA Introduction Part 57.3 - Using Different Web Browsers with Selenium](https://www.youtube.com/watch?v=qxNx12RWihU)
 - [Excel VBA Introduction Part 57.4 - Finding Web Elements in Selenium](https://www.youtube.com/watch?v=lr7CFZEI2YA&t=825s)
@@ -50,14 +50,16 @@ Proyectos realizados con el lenguaje vba, el cual viene integrado en la aplicaci
 ## Ribbon y Backstage
 
 ### Información
+
 🎬
+
 - [Cómo programar Excel Ribbon y Backstage con XML y VBA](https://www.youtube.com/watch?v=vKH13g4Xmb4)
 
 ## Proyectos
 
 - [👇Ripley Puntos](https://github.com/acastillom24/vba/raw/main/web-scraping/ripley-puntos.xlsm): Sirve obtener la información de los productos que puedes obtener con tus puntos ripley.
 
-## Otros
+## Funciones
 
 ### Guardar texto
 
@@ -71,7 +73,7 @@ Private Function saveString(textToSave$)
     Open filePath For Output As #fileNumber
     Print #fileNumber, textToSave
     Close #fileNumber
-    
+
     MsgBox "Archivo guardado correctamente."
 End Function
 ```
@@ -82,17 +84,125 @@ End Function
 Private Function BarraDeProgreso()
     Dim i As Long
     Dim max As Long
-    
+
     max = 100
-    
+
     For i = 1 To max
         Application.StatusBar = "Progreso: [" & _
         String(i, ChrW(9608)) & String(max - i, " ") & "] " & _
         Format(i / max, "0%")
         Application.Wait Now + TimeValue("0:00:01")
     Next i
-    
+
     Application.StatusBar = False
+End Function
+```
+
+### Mover el archivo mas reciente según su extensión y opcionalmente renombrarlo.
+
+```vb
+' Referencia: Microsoft Scripting Runtime
+' Info From: https://www.automateexcel.com/vba/move-files/
+
+Private Function MoveFiles( _
+    FromPath As String _
+    , ToPath As String _
+    , FileExt As String _
+    , Optional NewName As String = "") As Boolean
+
+    Dim fso As Scripting.FileSystemObject
+    Dim FileInFromFolder As Object
+    Dim fechaMasReciente As Date
+    Dim FromFile As String
+
+    Set fso = New Scripting.FileSystemObject
+    fechaMasReciente = DateValue("01/01/1900")
+
+    If ToPath = "" Then
+        MsgBox "Debe ingresar una dirección de una carpeta valida"
+        MoveFiles = False
+        Exit Function
+    End If
+
+    ' Crea una carpeta en caso de que esta no exista
+    If Not fso.FolderExists(ToPath) Then
+        fso.CreateFolder ToPath
+    End If
+
+    ' Determina el archivo mas reciente
+    For Each FileInFromFolder In fso.GetFolder(FromPath).Files
+        If LCase(Right(FileInFromFolder.Name, 4)) = FileExt Then
+            If fechaMasReciente < FileInFromFolder.DateLastModified Then
+                FromFile = FileInFromFolder.path
+                fechaMasReciente = FileInFromFolder.DateLastModified
+            End If
+        End If
+    Next FileInFromFolder
+
+    ' Mueve el archivo en caso este exista
+    If fso.FileExists(FromFile) Then
+        If NewName <> "" Then
+            Name FromFile As ToPath & "\" & NewName & FileExt
+        Else:
+            fso.MoveFile _
+                Source:=FromFile, _
+                Destination:=ToPath
+        End If
+    End If
+
+    Set fso = Nothing
+    MoveFiles = True
+
+End Function
+```
+
+### Cargar variables de archivos DotEnv
+
+```vb
+' Referencia: Microsoft Scripting Runtime
+
+Dim FSO As FileSystemObject
+Dim envDict As Scripting.Dictionary
+
+Public Sub LoadEnv()
+
+    'Initialize FileSystemobject and Dictionary objects
+    Set FSO = New FileSystemObject
+    Set envDict = New Scripting.Dictionary
+
+    'Define path to .env file
+    Dim envPath As String
+    envPath = ThisWorkbook.Path & "\.env"
+
+    'Check if .env file exists
+    If Not FSO.FileExists(envPath) Then
+        MsgBox "Could not find .env file"
+        Exit Sub
+    End If
+
+    'Read .env file and add variables to dictionary
+    Dim envFile As TextStream
+    Set envFile = FSO.OpenTextFile(envPath, ForReading)
+    Do Until envFile.AtEndOfStream
+        Dim line As String
+        line = envFile.ReadLine
+        If InStr(line, "=") > 0 Then
+            Dim parts() As String
+            parts = Split(line, "=")
+            'Delete single and doubles quotes
+            envDict(parts(0)) = Replace(Replace(parts(1), "'", ""), """", "")
+        End If
+    Loop
+    envFile.Close
+End Sub
+
+'Get value of environment variable
+Private Function GetEnv(key As String) As Variant
+    If envDict.Exists(key) Then
+        GetEnv = envDict(key)
+    Else
+        GetEnv = Null
+    End If
 End Function
 ```
 
