@@ -206,6 +206,61 @@ Private Function GetEnv(key As String) As Variant
 End Function
 ```
 
+### Regex
+
+#### Info from:
+
+- [VBA Regex](https://www.automateexcel.com/es/vba/vba-regex-es/)
+- [expresiones-regulares](https://github.com/falconmasters/expresiones-regulares/blob/master/Expresiones_Regulares.txt)
+
+#### Propiedades
+
+- **Pattern**: El patrón que va a utilizar para comparar con la cadena.
+- **IgnoreCase**: Si es True, entonces la coincidencia ignora las mayúsculas y minúsculas.
+- **Global**: Si es True, entonces se encuentran todas las coincidencias del patrón en la cadena. Si es Falso, sólo se encuentra la primera coincidencia.
+- **MultiLine**: Si es Verdadero, la coincidencia del patrón ocurre a través de los saltos de línea.
+
+#### Métodos
+
+- **Test**: Busca un patrón en una cadena y devuelve True si se encuentra una coincidencia.
+- **Replace**: Reemplaza las ocurrencias del patrón con la cadena de reemplazo.
+- **Execute**: Devuelve las coincidencias del patrón con la cadena.
+
+```vb
+' Referencia: Microsoft VBScript Regular Expressions 5.5
+
+Public Sub Regex()
+
+    Dim texto as String
+    Dim exp as Object
+
+    Set exp = New RegExp
+    exp.Pattern = ""
+    texto = ""
+
+    ' Test: Busca un patrón en una cadena y devuelve True si se encuentra.
+    Debug.Print exp.Test(texto)
+
+    ' Replace: Reemplaza las ocurrencias del patrón con la cadena de reemplazo.
+    Dim newTexto  as String
+
+    exp.Global = False '
+    Debug.Print exp.Replace(texto, newTexto)
+
+    ' Execute: Devuelve las coincidencias del patrón con la cadena.
+    Dim Coincidencias as object
+    Dim Coincidencia as object
+
+    exp.Global = False
+    exp.IgnoreCase = False
+
+    For Each coincidencia In coincidencias
+        Debug.Print coincidencia.Value
+    Next
+
+End Sub
+```
+
 ## Ejecuciones por consola
 
 - Crea un libro de trabajo habilitado para macros
