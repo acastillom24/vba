@@ -1,5 +1,9 @@
-/node_modules
-logs
-/xvba_excel_backup
+*logs
+*ribbons
+*xvba_modules
+*xvba_unit_test
+Config.json
+package.json
 .gitignore
 .env
+.venv
